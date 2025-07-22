@@ -5,7 +5,6 @@ from uuid import uuid4
 
 router = APIRouter(prefix="/products", tags=["Products"])
 
-# In-memory list to simulate DB
 products = []
 
 @router.get("/", response_model=List[Product])
@@ -14,7 +13,7 @@ def get_all_products():
 
 @router.post("/", response_model=Product)
 def create_product(product: Product):
-    product.id = str(uuid4())  # Add a random ID
+    product.id = str(uuid4())
     products.append(product)
     return product
 
