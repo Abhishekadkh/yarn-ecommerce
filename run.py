@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import product_routes  # import your routers here
+from routes import product_routes 
 
 app = FastAPI(title="Yarn E-Commerce API")
 
